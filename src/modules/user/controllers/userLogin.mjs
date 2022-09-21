@@ -8,7 +8,7 @@ const userLogin = async (req, res) => {
 		);
 		const token = await user.generateAuthToken();
 
-		res.status(200).send({ success: true, admin, token });
+		res.status(200).send({ success: true, user, token });
 	} catch (err) {
 		res.status(500).send({ success: false, message: err.message });
 	}

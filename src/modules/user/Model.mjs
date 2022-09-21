@@ -37,6 +37,79 @@ const Schema = mongoose.Schema(
 				},
 			},
 		],
+
+		menu: {
+			firstDay: {
+				title: {
+					type: String,
+					default: "First Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			secondDay: {
+				title: {
+					type: String,
+					default: "Second Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			thirdDay: {
+				title: {
+					type: String,
+					default: "Third Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			fourthDay: {
+				title: {
+					type: String,
+					default: "Fourth Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			fifthDay: {
+				title: {
+					type: String,
+					default: "Fifth Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			sixthDay: {
+				title: {
+					type: String,
+					default: "Sixth Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+			seventhDay: {
+				title: {
+					type: String,
+					default: "Seventh Day",
+				},
+				dish: {
+					type: mongoose.Schema.Types.ObjectId,
+					default: null,
+				},
+			},
+		},
 	},
 	{ timestamps: {}, versionKey: false }
 );
@@ -59,7 +132,7 @@ Schema.methods.generateAuthToken = async function () {
 	user.tokens = user.tokens.concat({ token });
 	await user.save();
 
-	return user;
+	return token;
 };
 
 Schema.statics.findByCredentials = async (email, password) => {

@@ -9,10 +9,10 @@ const userGetById = async (req, res) => {
 		if (!user) {
 			return res
 				.status(404)
-				.send({ success: false, error: "Admin not found" });
+				.send({ success: false, error: "User not found" });
 		}
 
-		res.status(200).send({ success: true, admin });
+		res.status(200).send({ success: true, user });
 	} catch (err) {
 		res.status(500).send({ success: false, message: err.message });
 	}
